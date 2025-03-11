@@ -9,7 +9,7 @@
     <h1>Fabians Website</h1>
     <p> Das ist eine Test Website </p>
     <hr>
-    <img src="assets/cat.png" alt="Bild:">
+    <img src="assets/cat.png" alt="Bild:" class="catImage">
 
     <hr>
 
@@ -19,7 +19,20 @@
         <li>3</li>
     </ul>
 
-    <a href="https://google.com">Google</a>
+    <a href="info.fabianschieder.com/">Website</a>
+
+    <br>
+    <br>
+
+    <button onclick="printTest()">Button</button>
+    <span id="output" class="outputText"></span>
+
+    <script>
+        function printTest()
+        {
+            document.getElementById("output").innerText = "Test";
+        }
+    </script>
 
 </body>
 </html>

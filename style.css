@@ -19,8 +19,37 @@ p
     text-align: left;
 }
 
-img
+li
 {
-    width: 20%;
-    height: 20%;
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+}
+
+.catImage
+{
+    width: 5%;
+    height: 4%;
+}
+
+a
+{
+    color: #49ccfc;
+    font-size: 20px;
+    text-align: left;
+}
+
+.outputText
+{
+    color: #49ccfc;
+    font-size: 20px;
+    text-align: left;
+}
+
+button
+{
+    color: #fff;
+    background-color: #182b50;
+    font-size: 20px;
+    text-align: left;
 }

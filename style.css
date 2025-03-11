@@ -1,6 +1,13 @@
 h1
 {
-    color: #FF0000;
+    color: #49ccfc;
     font-size: 40px;
-    text-align: center;
+    text-align: left;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #090e1e;
 }

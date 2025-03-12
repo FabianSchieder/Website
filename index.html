@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <title>Fabians Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Fabians Website</h1>
-    <p> Das ist eine Test Website </p>
-    <hr>
-    <img src="assets/cat.png" alt="Bild:" class="catImage">
 
-    <hr>
+<h1>Fabians Website</h1>
+<p>Das ist eine Test-Website</p>
 
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
+<hr>
 
-    <a href="info.fabianschieder.com/">Website</a>
+<img src="assets/cat.png" alt="Bild:" class="catImage">
 
-    <br>
-    <br>
+<hr>
 
-    <button onclick="printTest()">Button</button>
-    <span id="output" class="outputText"></span>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
 
-    <script>
-        function printTest()
+<a href="https://info.fabianschieder.com/">Website</a>
+
+<br><br>
+
+<button onclick="printTest()">Button</button>
+<span id="output" class="outputText"></span>
+
+<script>
+    function printTest() {
+        document.getElementById("output").innerText = "Test";
+    }
+
+
+    function authenticate()
+    {
+        let user = prompt("Benutzername:");
+        let pass = prompt("Passwort:");
+
+        if (user !== "admin" || pass !== "1916")
         {
-            document.getElementById("output").innerText = "Test";
+            document.body.innerHTML = "<h1>Zugang verweigert! Falscher Benutzername oder Passwort!</h1>";
         }
-    </script>
+    }
+
+    window.onload = authenticate;
+
+
+    //setTimeout(function() {
+    //    window.location.href = "https://google.com";
+    //});
+
+</script>
 
 </body>
 </html>
-
-

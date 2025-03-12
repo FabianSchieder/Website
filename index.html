@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8">
     <title>Fabians Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Binde nur main.js ein -->
+    <script src="main.js"></script>
 </head>
 <body>
 
@@ -36,26 +38,6 @@
     function printTest() {
         document.getElementById("output").innerText = "Test";
     }
-
-
-    function authenticate()
-    {
-        let user = prompt("Benutzername:");
-        let pass = prompt("Passwort:");
-
-        if (user !== "admin" || pass !== "1916")
-        {
-            document.body.innerHTML = "<h1>Zugang verweigert! Falscher Benutzername oder Passwort!</h1>";
-        }
-    }
-
-    window.onload = authenticate;
-
-
-    //setTimeout(function() {
-    //    window.location.href = "https://google.com";
-    //});
-
 </script>
 
 </body>

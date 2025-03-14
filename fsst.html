@@ -1,0 +1,105 @@
+<p><a href="obsidian://open?vault=Schule&amp;file=3AHEL%2FFSST%2FFSST%20Bibel.pdf">FSST-Bibel</a></p>
+<h1 id="-font-color-9bbb59-qt-font-"><font color="#9bbb59">Qt</font></h1>
+<p><a href="https://qt.io">QT-Website</a></p>
+<p>Qt ist ein Anwendungsframework und GUI-Toolkit zur plattform-übergreifenden Entwicklung von Programmen und grafischen Benutzeroberfläche.</p>
+<hr>
+<h3 id="-font-color-9bbb59-plattformen-font-"><font color="#9bbb59">Plattformen</font></h3>
+<p><code>Windows</code> <code>macOS</code> <code>X11(Unix-Derivate, zb. KDE)</code> <code>iOS</code> <code>Android</code></p>
+<h3 id="-font-color-9bbb59-lizensierung-font-"><font color="#9bbb59">Lizensierung</font></h3>
+<ul>
+    <li><code>GNU General Public License (GPL)</code></li>
+    <li><code>GNU Lesser Paublic License (LGPL)</code></li>
+    <li><code>kommerzielle Lizenzen</code></li>
+</ul>
+<hr>
+<p>QT ist in <strong><font color="#9bbb59">C++ entwickelt</font></strong>, und verwendet einen <strong><em><font color="#9bbb59">Präprozessor moc</font></em></strong> (meta object compiler), der C++ um zusätzliche Elemente wie z.B. Signale und Slots erweitert.</p>
+<p><img src="3AHEL/FSST/Images/image.png" alt="alt text"></p>
+<h3 id="-font-color-9bbb59-signal-slot-konzept-font-"><font color="#9bbb59">Signal Slot Konzept</font></h3>
+<p>&quot;<strong><font color="#9bbb59">signals</font></strong>&quot; und &quot;<strong><font color="#9bbb59">slots</font></strong>&quot; werden für die <strong><font color="#9bbb59">Kommunikation</font></strong> zwischen <strong><font color="#9bbb59">Objekten</font></strong> verwendet. Ein <strong><font color="#9bbb59">Objekt</font></strong> sendet ein <strong><font color="#9bbb59">Signal</font></strong>, das führt zum <strong><font color="#9bbb59">Aufruf</font></strong> einer <strong><font color="#9bbb59">Method</font></strong>e eines anderen Objekts, wenn diese Methode als <strong><font color="#9bbb59">Empfänger</strong> (<strong><font color="#9bbb59">Slot</font></strong>)</font> registriert ist. Das Konzept kann als Anwendung des Beobachter - Entwurfsmuster (Observer Pattern) angesehen werden.</p>
+<p><img src="3AHEL/FSST/Images/image-2.png" alt="alt text"></p>
+<hr>
+<h1 id="-font-color-8064a2-c-variablen-font-"><font color="#8064a2">C++ Variablen</font></h1>
+<blockquote>
+    <font color="#b2a2c7"> <a href="obsidian://open?vault=Schule&amp;file=3AHEL%2FFSST%2FFSST%20Bibel.pdf">FSST-Bibel</a> - Seite 60  </font>
+
+</blockquote>
+<p><br></p>
+<p>C++ Variablen können <font color="#b2a2c7">automatisch</font>, <font color="#b2a2c7">statisch</font> oder <font color="#b2a2c7">dynamisch</font> sein. </p>
+<h3 id="-font-color-8064a2-automatisch-font-"><font color="#8064a2">automatisch</font></h3>
+<p>Variablen werden ohne weitere Angaben in einem Block vereinbart. Für diese wird beim <font color="#b2a2c7">Betreten</font> des Blocks Speicherplatz <font color="#b2a2c7">reserviert</font> und beim <font color="#b2a2c7">Verlassen</font> wieder <font color="#b2a2c7">freigegeben</font>. Wird das Unterprogram rekursiv aufgerufen, wird der <font color="#b2a2c7">Speicherplatz</font> <font color="#b2a2c7">entsprechend</font> <font color="#b2a2c7">oft</font> <font color="#b2a2c7">reserviert</font>.</p>
+<pre><code class="lang-cpp"><span class="hljs-attribute">int zahl</span> = 0;
+</code></pre>
+<h3 id="-font-color-8064a2-statisch-font-"><font color="#8064a2">statisch</font></h3>
+<p>Variablen besitzen ihren Speicherplatz vom <font color="#b2a2c7">Start</font> des Hauptprogramms an, und behalten ihn bis zum <font color="#b2a2c7">Ende des Programms.</font> Beim rekursiven Aufruf eines Unterprogramms wird daher der Speicher nur 1 mal reserviert.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">static</span>  <span class="hljs-keyword">int</span> zahl = <span class="hljs-number">0</span>;
+</code></pre>
+<p>In C++ erfolgt der Zugriff auf eine statische Eigenschaft über den Klassennamen.  </p>
+<pre><code class="lang-cpp"><span class="hljs-bullet">Klasse :: </span>zahl
+</code></pre>
+<h3 id="-font-color-8064a2-dynamisch-font-"><font color="#8064a2">dynamisch</font></h3>
+<p>Variablen erhalten den Speicherplatz vom Programmierer mit dem Operator NEW (in C mit den
+    Funktionen malloc/calloc) zugewiesen. Der Speicherplatz muss wieder vom Programmierer mit dem</p>
+<p>Operator <font color="#b2a2c7">DELETE</font> (in C mit der Funktion <font color="#b2a2c7">free</font>) freigegeben werden.</p>
+<pre><code class="lang-cpp">Rennwagen *rennw<span class="hljs-comment">;</span>
+<span class="hljs-attribute">rennw</span> = new Rennwagen()<span class="hljs-comment">;</span>
+rennw-&gt;beschleunigen(<span class="hljs-number">100</span>)<span class="hljs-comment">;</span>
+delete(rennw)<span class="hljs-comment">;</span>
+</code></pre>
+<hr>
+<h1 id="-font-color-e36c09-u-objekte-als-werteparameter-u-font-"><font color="#e36c09"><u>Objekte als Werteparameter</u></font></h1>
+<p><br></p>
+<h2 id="-font-color-f79646-1-wert-bergabe-als-kopie-call-by-value-font-"><font color="#f79646">1. Wertübergabe als Kopie (Call by value)</font></h2>
+<h3 id="-font-color-ffffff-nachteil-font-"><font color="#ffffff">Nachteil:</font></h3>
+<p>Es wird ein neues Objekt erstellt, das am ende wieder zerstört wird.</p>
+<h2 id="-font-color-f79646-2-wert-bergabe-als-zeiger-call-by-reference-pointer-font-"><font color="#f79646">2. Wertübergabe als Zeiger (Call by reference / pointer)</font></h2>
+<h3 id="-font-color-ffffff-vorteil-font-"><font color="#ffffff">Vorteil:</font></h3>
+<p>kein neues Objekt</p>
+<h3 id="-font-color-ffffff-nachteil-font-"><font color="#ffffff">Nachteil:</font></h3>
+<p>versehentliches Ändern möglich.</p>
+<h2 id="-font-color-f79646-1-wert-bergabe-als-referenz-mit-const-font-"><font color="#f79646">1. Wertübergabe als Referenz mit const</font></h2>
+<h3 id="-font-color-ffffff-vorteil-font-"><font color="#ffffff">Vorteil:</font></h3>
+<p>Durch das Schlüsselwort const wird ein versehentliches Überschreiben verhindert (empfohlen).</p>
+<hr>
+<h1 id="-font-color-548dd4-u-generische-klassen-templates-u-font-"><font color="#548dd4"><u>Generische Klassen (Templates)</u></font></h1>
+<blockquote>
+    <font color="#548dd4"> <a href="obsidian://open?vault=Schule&amp;file=3AHEL%2FFSST%2FFSST%20Bibel.pdf">FSST-Bibel</a> - Seite 65  </font>
+
+</blockquote>
+<p>Eine generische Klasse ist eine Schablone (Template), mit deren Hilfe echte Klassen erzeugt werden können. Die generische Klasse hat formale Parameter, die als Platzhalter, für die einzusetzenden Daten, stehen. Durch einen Generierungsprozess wird aus der Schablone eine echte Klasse erzeugt. </p>
+<p>Dabei werden die formalen Parameter durch die konkreten, durch die Generierung übernommenen, Daten ersetzt.</p>
+<p>![[Pasted image 20250314115350.png]]</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">class</span> T&gt; <span class="hljs-keyword">class</span> <span class="hljs-built_in">stack</span>                      <span class="hljs-comment">//formaler Parameter T </span>
+{
+    <span class="hljs-keyword">private</span>: T stck[<span class="hljs-number">10</span>];                            <span class="hljs-comment">//Stack vom Typ T </span>
+        <span class="hljs-keyword">int</span> top;                                    <span class="hljs-comment">//Index des nächsten freien Platzes </span>
+
+    <span class="hljs-keyword">public</span>: <span class="hljs-built_in">stack</span>() { top = <span class="hljs-number">0</span>; } <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">push</span> <span class="hljs-params">(T elm)</span></span>; <span class="hljs-comment">//Element am Stack ablegen T </span>
+        pop();                                      <span class="hljs-comment">//Element vom Stack holen </span>
+        <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span>                              <span class="hljs-comment">//Abfrage ob Stack leer ist</span>
+        </span>{
+            <span class="hljs-keyword">return</span> top == <span class="hljs-number">0</span>;
+        }
+};
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">class</span> T&gt; <span class="hljs-keyword">bool</span> <span class="hljs-built_in">stack</span> &lt;T&gt;::push(T elm)
+{
+    <span class="hljs-keyword">bool</span> ok = <span class="hljs-literal">false</span>;                   <span class="hljs-comment">//Element am Stack </span>
+                                      <span class="hljs-comment">//ablegen </span>
+    <span class="hljs-keyword">if</span>(top &lt; <span class="hljs-number">10</span>)
+    {
+        stck[top] = elm;
+        top++;
+        ok = <span class="hljs-literal">true</span>;
+    }
+<span class="hljs-keyword">return</span> ok;
+}
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">class</span> T&gt; T <span class="hljs-built_in">stack</span> &lt;T&gt;::pop() <span class="hljs-comment">//Element </span>
+{                                     <span class="hljs-comment">//vom Stack holen </span>
+    <span class="hljs-keyword">if</span>(top &gt; <span class="hljs-number">0</span>)
+    {
+        top--;
+    }
+<span class="hljs-keyword">return</span> stck[top];
+}
+</code></pre>
